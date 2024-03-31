@@ -1,0 +1,21 @@
+
+Auth0
+
+1. Create Machine-to-Machine application via the UI or CLI (see commands)
+2. Authorize the app to access the Auth0 Management API
+3. Create an .env file
+
+4. Add callback URLs - first one is the callback for the UI, the second for the CLI; you can use just one, if don't need the other
+http://localhost:8200/ui/vault/auth/oidc/oidc/callback,
+http://localhost:8250/oidc/callback
+
+
+
+
+Introducing Auth0 Actions
+https://auth0.com/blog/introducing-auth0-actions/
+- exaplains why we don't need callbacks anymore (in contrast to the previous mechanims with Auth0 Rules)
+
+Migrating Auth0 Rules to Auth0 Actions
+https://youtu.be/B5pzpPqPbbM
+- examples for migrating old rules (to be deprecated later in 2024) to actions.

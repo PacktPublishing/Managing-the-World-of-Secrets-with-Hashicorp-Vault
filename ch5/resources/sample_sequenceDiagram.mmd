@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant Admin
+    participant UI
+    participant InventorySystem
+    participant Database
+
+    Admin ->> UI: Initiate Bill Creation
+    UI ->> InventorySystem: Request Inventory Information
+    InventorySystem -->> UI: Send Inventory Information
+    UI ->> Database: Request Bill Data
+    Database -->> UI: Send Bill Data
+    UI -->> Admin: Display Bill Data
+    Admin -->> UI: Confirm Bill
+    UI ->> Database: Save Bill
+    Database -->> UI: Confirmation

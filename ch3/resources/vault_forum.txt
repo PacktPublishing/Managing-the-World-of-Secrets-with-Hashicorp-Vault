@@ -1,0 +1,2 @@
+"Vault cli: how to create orphan token with role"=https://discuss.hashicorp.com/t/vault-cli-how-to-create-orphan-token-with-role/21424
+

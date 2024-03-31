@@ -1,0 +1,19 @@
+{
+    "display_name": "orphan-1",
+    "entity_alias": "",
+    "explicit_max_ttl": "2h",
+    "id": "orphan-1_2024-01-27_14-12-53",
+    "meta": {},
+    "no_default_policy": true,
+    "no_parent": true,
+    "num_uses": 6,
+    "period": "20m",
+    "policies": [
+      "token_creation"
+    ],
+    "renewable": true,
+    "ttl": "30m",
+    "type": "service"
+  }
+
+  

@@ -1,0 +1,13 @@
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    5
+Threshold       3
+Version         1.15.4
+Build Date      2023-12-04T17:45:28Z
+Storage Type    file
+Cluster Name    vault-cluster-182d9f6a
+Cluster ID      01cb4b73-d6ea-d91e-442d-615fd4ce4377
+HA Enabled      false
