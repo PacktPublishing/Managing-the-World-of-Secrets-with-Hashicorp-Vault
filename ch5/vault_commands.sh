@@ -133,6 +133,7 @@ vault policy list
 vault policy read awsiam
 
 # Create AWS user with AdministratorAccess policy attached
+# Fill in your own values for <UID> and <user_name>
 aws iam create-user \
     --user-name vaultiam \
     --permissions-boundary arn:aws:iam::aws:policy/AdministratorAccess
@@ -140,8 +141,8 @@ aws iam create-user \
 #     "User": {
 #         "Path": "/",
 #         "UserName": "vaultiam",
-#         "UserId": "AIDATPLNME26PO2SL4GFD",
-#         "Arn": "arn:aws:iam::239136941756:user/tester4",
+#         "UserId": "<UID>",
+#         "Arn": "arn:aws:iam::239136941756:user/<user_name>",
 #         "CreateDate": "2024-03-23T14:51:04Z", 
 #         "PermissionsBoundary": {
 #             "PermissionsBoundaryType": "Policy",
@@ -150,13 +151,14 @@ aws iam create-user \
 #     }
 # }
 
+# Fill in your own values for <access_key_id> and <secret_key>
 aws iam create-access-key --user-name vaultiam
 # {
 #     "AccessKey": {
 #         "UserName": "vaultiam",
-#         "AccessKeyId": "AKIATPLNME26K225T64Q",
+#         "AccessKeyId": "<access_key_id>",
 #         "Status": "Active",
-#         "SecretAccessKey": "HI38UzvZZR7lBhQ/YxAgCCJxbfp3aHANriSrleR/",
+#         "SecretAccessKey": "<secret_key>",
 #         "CreateDate": "2024-03-23T14:56:42Z"
 #     }
 # }
@@ -208,9 +210,10 @@ vault write auth/aws/role/awsiamauth-role \
 vault write auth/aws/config/client iam_server_id_header_value=vaultawsiam.example.com
 
 # Modify role to allow any user to log in
+# Provide your own value for <aws_account_ID>
 vault write auth/aws/role/awsiamauth-role \ 
     auth_type=iam \
-    bound_iam_principal_arn="arn:aws:iam::239136941756:*"
+    bound_iam_principal_arn="arn:aws:iam::<aws_account_ID>:*"
     policies=awsiam \
     ttl=72h
 
