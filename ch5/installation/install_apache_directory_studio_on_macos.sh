@@ -6,13 +6,13 @@ brew install openjdk@11
 ll /usr/local/Cellar/openjdk@11/11.0.12/bin/java
 
 
-# 2. Download this ApacheDS DMG - 2.0.0-M17
+# 2. Download this ApacheDS DMG 2.0.0-M17
 # https://archive.apache.org/dist/directory/studio/2.0.0.v20210717-M17/ApacheDirectoryStudio-2.0.0.v20210717-M17-macosx.cocoa.x86_64.dmg
 # https://archive.apache.org/dist/directory/studio/2.0.0.v20210717-M17/
 
 # 3. Install the DMG
 You should be able to just drag & drop the binary into the Applications folder.
-PKG for other versions I tried did NOT work - does not let you install it (three is some sort of package restriction)
+PKG for other versions I tried did NOT work does not let you install it (three is some sort of package restriction)
 
 # 4. Modify to info.plist file to point to Java 11 installed via Homebrew above
 /Applications > R-click ApacheDirectorStudio > Show Package Contents > Contents > open info.plist
@@ -25,4 +25,4 @@ PKG for other versions I tried did NOT work - does not let you install it (three
 # I had to set it manually:
 export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.12
 
-# but this is not relevant. It is important that you just point to the Java11 version that works. The Java 11 version recommended on the ApacheDS site is different - AdoptOpenJDK, instead of just openjdk. AdoptOpenJDK did not work for me.
+# but this is not relevant. It is important that you just point to the Java11 version that works. The Java 11 version recommended on the ApacheDS site is different AdoptOpenJDK, instead of just openjdk. AdoptOpenJDK did not work for me.

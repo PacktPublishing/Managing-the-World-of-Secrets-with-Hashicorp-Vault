@@ -1,5 +1,5 @@
 [Unit]
-Description="HashiCorp Vault - A tool for managing secrets"
+Description="HashiCorp Vault A tool for managing secrets"
 Documentation=https://developer.hashicorp.com/vault/docs
 Requires=network-online.target
 After=network-online.target
@@ -20,8 +20,8 @@ SecureBits=keep-caps
 AmbientCapabilities=CAP_IPC_LOCK
 CapabilityBoundingSet=CAP_SYSLOG CAP_IPC_LOCK
 NoNewPrivileges=yes
-ExecStart=/usr/bin/vault server -config=/etc/vault.d/vault.hcl
-ExecReload=/bin/kill --signal HUP $MAINPID
+ExecStart=/usr/bin/vault serverconfig=/etc/vault.d/vault.hcl
+ExecReload=/bin/kill-signal HUP $MAINPID
 KillMode=process
 KillSignal=SIGINT
 Restart=on-failure

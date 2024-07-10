@@ -2,7 +2,7 @@
 
 
 systemctl stop vault.service
-set -e
+sete
 source .env
 
 sleep 4
@@ -18,7 +18,7 @@ vault policy write min min_policy.hcl
 vault auth enable oidc
 
 # Expose the OIDC method in the UI
-vault auth tune -listing-visibility=unauth -description="Logging in with OIDC" oidc/
+vault auth tunelisting-visibility=unauthdescription="Logging in with OIDC" oidc/
 
 vault write auth/oidc/config \
     oidc_discovery_url="https://$AUTH0_DOMAIN/" \
@@ -33,7 +33,7 @@ vault write auth/oidc/role/auth0-demo \
     user_claim="sub" \
     policies=min
 
-# Check role, if needed - here we verify that role auth0-demo is listed
+# Check role, if needed here we verify that role auth0-demo is listed
 vault list auth/oidc/role
 # Read the fole fields to verify the values are correct
 vault read auth/oidc/role/auth0-demo

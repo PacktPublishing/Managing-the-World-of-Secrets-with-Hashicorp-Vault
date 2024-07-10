@@ -12,55 +12,55 @@ ps aux | grep apacheds
 
 Log4J Config
 ---
-    -Dlog4j.configuration=file:////var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default/conf/log4j.properties
+   Dlog4j.configuration=file:////var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default/conf/log4j.properties
 
 
 More Directories
 ---
 ### Default Directory
-    -Dapacheds.var.dir=/var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default 
+   Dapacheds.var.dir=/var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default 
 
 ### Log Directory
-    -Dapacheds.log.dir=/var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default/log 
+   Dapacheds.log.dir=/var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default/log 
 
 ### Working Directory
-    -Dapacheds.run.dir=/var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default/run 
+   Dapacheds.run.dir=/var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default/run 
 
 ### Temporary Directory
-    -Djava.io.tmpdir=/var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default/tmp 
+   Djava.io.tmpdir=/var/lib/apacheds-2.0.0.AM28-SNAPSHOT/default/tmp 
 
 ### Instance Name
-    -Dapacheds.instance=default
+   Dapacheds.instance=default
 
 Java Library Path
 ---
-    -Djava.library.path=../lib -classpath ../lib/apacheds-service-2.0.0.AM28-SNAPSHOT.jar:../lib/apacheds-wrapper-2.0.0.AM28-SNAPSHOT.jar:../lib/wrapper-3.2.3.jar 
+   Djava.library.path=../libclasspath ../lib/apacheds-service-2.0.0.AM28-SNAPSHOT.jar:../lib/apacheds-wrapper-2.0.0.AM28-SNAPSHOT.jar:../lib/wrapper-3.2.3.jar 
 
 
 Wrapper Key (Tanuki)
 ---
-    -Dwrapper.key=sX6w04_VPadbW_0l 
+   Dwrapper.key=sX6w04_VPadbW_0l 
 
 Wrapper Port
 ---
-    -Dwrapper.port=32000 
+   Dwrapper.port=32000 
 
 Wrapper JVM Port Min
 ---
-    -Dwrapper.jvm.port.min=31000 
+   Dwrapper.jvm.port.min=31000 
 
 Wrapper JVM Port
 ---
-    -Dwrapper.jvm.port.max=31999
+   Dwrapper.jvm.port.max=31999
 
 Wrapper PID, Version, etc.
 ---
 
-    -Dwrapper.pid=597109
-    -Dwrapper.version=3.2.3 
-    -Dwrapper.native_library=wrapper 
-    -Dwrapper.service=TRUE 
-    -Dwrapper.cpu.timeout=10 
+   Dwrapper.pid=597109
+   Dwrapper.version=3.2.3 
+   Dwrapper.native_library=wrapper 
+   Dwrapper.service=TRUE 
+   Dwrapper.cpu.timeout=10 
 
 
 Start Command
@@ -72,10 +72,10 @@ sudo /etc/init.d/apacheds-2.0.0.AM28-SNAPSHOT-default restart
 sudo /etc/init.d/apacheds-2.0.0.AM28-SNAPSHOT-default status
 sudo /etc/init.d/apacheds-2.0.0.AM28-SNAPSHOT-default stop
 ```
-/etc/init.d/apacheds-2.0.0.AM28-SNAPSHOT-default - just a shell script wrapper calling:
+/etc/init.d/apacheds-2.0.0.AM28-SNAPSHOT-default just a shell script wrapper calling:
     /opt/apacheds-2.0.0.AM28-SNAPSHOT/bin/apacheds $1 default
-- $1 is the command - start, stop, status
-- default - name of the ApacheDS instance to start, stop, or get status of
+- $1 is the command start, stop, status
+- default name of the ApacheDS instance to start, stop, or get status of
 
 You can alias this to something much shorder in ~/.zshrc
 

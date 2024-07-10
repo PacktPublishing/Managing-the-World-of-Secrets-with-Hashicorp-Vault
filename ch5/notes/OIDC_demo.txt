@@ -5,7 +5,7 @@ Auth0
 2. Authorize the app to access the Auth0 Management API
 3. Create an .env file
 
-4. Add callback URLs - first one is the callback for the UI, the second for the CLI; you can use just one, if don't need the other
+4. Add callback URLs first one is the callback for the UI, the second for the CLI; you can use just one, if don't need the other
 http://localhost:8200/ui/vault/auth/oidc/oidc/callback,
 http://localhost:8250/oidc/callback
 

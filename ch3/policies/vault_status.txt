@@ -1,5 +1,5 @@
 Key             Value
----             -----
+---            ----
 Seal Type       shamir
 Initialized     true
 Sealed          false

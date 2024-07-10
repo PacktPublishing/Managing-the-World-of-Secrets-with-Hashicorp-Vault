@@ -1,5 +1,5 @@
 # 
-path "secret/awsiamdemo/**" {
+path "secret/awsiamdemo/" {
     capabilities = ["list", "read"]
 }
 

@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant PrimaryCluster as Primary Cluster (A)
+    participant PerformanceReplica1 as Performance Replica (B)
+    participant PerformanceReplica2 as Performance Replica (C)
+    participant DRCluster1 as DR Cluster (A-DR)
+    participant DRCluster2 as DR Cluster (B-DR)
+    participant DRCluster3 as DR Cluster (C-DR)
+    participant Application as Application
+
+    PrimaryCluster>> PerformanceReplica1: Replicate data
+    PrimaryCluster>> PerformanceReplica2: Replicate data
+    PerformanceReplica1>> DRCluster2: Replicate data
+    PerformanceReplica2>> DRCluster3: Replicate data
+    PrimaryCluster>> DRCluster1: Replicate data
+
+    Note over PrimaryCluster, DRCluster1: Region 1 failure
+
+    DRCluster1>> DRCluster1: Promote to active
+    DRCluster1>> Application: Continue serving requests
+    Application>> DRCluster1: Access secrets and tokens
+
+    Note over DRCluster1, Application: Full functionality with some redundancy loss until Region 1 is restored

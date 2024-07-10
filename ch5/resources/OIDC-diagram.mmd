@@ -6,7 +6,7 @@ OIDC-auth-method(OIDC Auth Method) <-->|1. load| Auth0-Config(Auth0 <br/> Config
 end
 
 subgraph Auth0
-    OIDC-auth-method -->|2. call| Vault-Provider-App
+    OIDC-auth-method->|2. call| Vault-Provider-App
 end
 
 Vault-Provider-App(Vault Provider App) .-> |3. redirect| Login-Screen(Browser Login Screen)
